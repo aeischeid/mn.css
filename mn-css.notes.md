@@ -65,13 +65,22 @@ input:where([type='checkbox'], [type='radio'], [type='range']) {
 ```
 7. text-wrap: balance - Better heading typography
 ``` css
+h1, h2, h3 {
+    text-wrap: balance;
+}
 ```
 8. scrollbar-gutter - Prevent layout shift
 ``` css
+html {
+    scrollbar-gutter: stable;
+}
 ```
 9. Modern color spaces - oklch() for better color manipulation
 
 ``` css
+:root {
+    --primary: oklch(55% 0.15 142); /* More perceptually uniform */
+}
 ```
 10. :has() - More powerful parent/context selection (already using)
 Could replace some .has( with simpler selectors in certain cases.
