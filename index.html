@@ -9,9 +9,7 @@
 			name="description"
 			content="A pure HTML example, without dependencies."
 		/>
-		<link rel="stylesheet" href="mn.css" />
-		<!--<link rel="stylesheet" href="mini-nord.css" />-->
-		<!--<link rel="stylesheet" href="water/builds/water.css" /> -->
+		<link id="theme-css" rel="stylesheet" href="mn.css" />
 	</head>
 
 	<body>
@@ -22,18 +20,14 @@
 				<p>A pure HTML example, without dependencies.</p>
 			</hgroup>
 			<nav>
-				<ul>
-					<li>
-						<details class="dropdown">
-							<summary role="button" class="secondary">Theme</summary>
-							<ul>
-								<li><a href="#" data-theme-switcher="auto">Auto</a></li>
-								<li><a href="#" data-theme-switcher="light">Light</a></li>
-								<li><a href="#" data-theme-switcher="dark">Dark</a></li>
-							</ul>
-						</details>
-					</li>
-				</ul>
+				<label for="theme-select"
+					>Choose Style:
+					<select id="theme-select">
+						<option value="mn.css">mn.css</option>
+						<option value="mini-nord.css">mini-css</option>
+						<option value="water/builds/water.css">water.css</option>
+					</select>
+				</label>
 			</nav>
 		</header>
 		<!-- ./ Header -->
@@ -572,5 +566,13 @@
 
 		<!-- Modal -->
 		<script src="js/modal.js"></script>
+		<script>
+			const theme = document.getElementById("theme-css");
+			const selector = document.getElementById("theme-select");
+
+			selector.addEventListener("change", function () {
+				theme.href = this.value;
+			});
+		</script>
 	</body>
 </html>
