@@ -4,12 +4,20 @@ the name: MN because Minnesota is both a cool place and where the devs making th
 
 The inspirations:
 pico.css https://picocss.com/
+https://github.com/kevquirk/simple.css
 water.css https://watercss.kognise.dev/
 missing.style https://missing.style/
 milligram https://milligram.io/
 mini.css https://minicss.us/docs.htm
 bolt.css https://boltcss.com/
 dev.css https://tangled.org/devins.page/dev.css
+https://github.com/DigitallyTailored/Classless.css?tab=readme-ov-file
+https://andybrewer.github.io/mvp/mvp.html
+
+https://smolcss.dev/
+https://moderncss.dev/
+https://modern-css.com/
+
 
 DaisyUI https://daisyui.com/
 Shadcn-classless https://nandaleio.github.io/shadcn-classless/#introdution

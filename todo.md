@@ -85,5 +85,8 @@ html {
 10. :has() - More powerful parent/context selection (already using)
 Could replace some .has( with simpler selectors in certain cases.
 
-``` css
-```
+11. adopt richer table & RTL demos as in https://lissomware.github.io/css/
+
+12. hr styling and vertical hr divider as in classless shadcn
+
+13. add `<aside>` styling similar to mvp.css
