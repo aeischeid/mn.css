@@ -90,3 +90,7 @@ Could replace some .has( with simpler selectors in certain cases.
 12. hr styling and vertical hr divider as in classless shadcn
 
 13. add `<aside>` styling similar to mvp.css
+
+14. include table for comparing classless css libs and UI suites
+
+15. a nice doc page for the atomic / utility classes
