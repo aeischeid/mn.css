@@ -5,6 +5,8 @@ the name: MN because Minnesota is both a cool place and where the devs making th
 The inspirations:
 - pico.css https://picocss.com/
 - https://github.com/kevquirk/simple.css
+- https://www.youtube.com/watch?v=nhbYveaV0pk 
+- https://sqvrltastic.art/guides/animating-details-element-with-css/
 - water.css https://watercss.kognise.dev/
 - missing.style https://missing.style/
 - milligram https://milligram.io/
