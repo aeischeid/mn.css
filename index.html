@@ -4,12 +4,39 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<meta name="color-scheme" content="light dark" />
+		<link rel="icon" href="/mn-icon.svg" type="image/svg+xml" />
 		<title>Preview • MN CSS</title>
 		<meta
 			name="description"
 			content="A pure HTML example, without dependencies."
 		/>
-		<link id="theme-css" rel="stylesheet" href="mn.css" />
+		<link id="theme-css" rel="stylesheet" href="mn-dev.css" />
+		<style>
+			:root:has(#lightdark option[value="light"]:checked) {
+				color-scheme: light;
+			}
+			:root:has(#lightdark option[value="dark"]:checked) {
+				color-scheme: dark;
+			}
+			:root:has(#contrast option[value="low"]:checked) {
+				filter: contrast(75%);
+				/* only needed because of low contrast filter, which needs a declared color to work on: */
+				color: CanvasText;
+				background-color: Canvas;
+			}
+			:root:has(#contrast option[value="high"]:checked) {
+				& main {
+					background-color: Canvas;
+					border: 2px solid CanvasText;
+				}
+			}
+
+			@media (prefers-contrast: less) {
+				:root:has(#contrast option[value="high"]:checked) {
+					filter: revert;
+				}
+			}
+		</style>
 	</head>
 
 	<body>
@@ -24,8 +51,10 @@
 					>Choose Style:
 					<select id="theme-select">
 						<option value="">none</option>
-						<option value="mn.css" selected>mn.css</option>
+						<option value="mn.css">mn.css</option>
+						<option value="mn-dev.css" selected>mn-dev.css</option>
 						<option value="pico-new.css" selected>pico-new.css</option>
+						<option value="pico-new-light-dark.css">pico-light-dark</option>
 						<option value="mini-nord.css">mini-css</option>
 						<option value="water/builds/water.css">water.css</option>
 						<option value="classless.css">classless.css</option>
@@ -37,32 +66,64 @@
 		<!-- ./ Header -->
 
 		<!-- Main -->
-		<main class="container">
+		<main class="max-width-center">
 			<!-- Preview -->
-			<section id="preview">
+			<section class="flex-col gap-1">
 				<h2>Preview</h2>
 				<p>
-					Sed ultricies dolor non ante vulputate hendrerit. Vivamus sit amet
-					suscipit sapien. Nulla iaculis eros a elit pharetra egestas.
+					MN CSS doesn't aim to be a purely classless CSS library. It pairs a
+					bit of the purity and minimalism of that approach with super-css-reset
+					and atomic CSS philosophies. In practice this may mean layout of bare
+					HTML might not look the best out of the box. Whereas many classless
+					libs often say they are great for simple blog or such, just drop in
+					the stylesheet and presto! in mn.css a .blog-post class to control
+					layout may very much be something you still want to do. Vertical
+					spacing and rhythm are meant to be more controlled than implied. The
+					idea is this helps make MN.css more useful as html gets composed into
+					components. because what you don't want as a solid CSS foundation is
+					something that makes using plain HTML feel tedious, and having to go
+					about removing or overriding margins and paddings everytime you want
+					to use plain HTML elements fights against that.
 				</p>
+
+				<div class="flex-row gap-2">
+					<span
+						class="rounded p-2"
+						style="background-color: var(--primary); border: 0.1rem solid black"
+					></span>
+					<span
+						class="rounded p-2"
+						style="
+							background-color: var(--secondary);
+							border: 0.1rem solid black;
+						"
+					></span>
+					<span
+						class="rounded p-2"
+						style="
+							background-color: var(--tertiary);
+							border: 0.1rem solid black;
+						"
+					></span>
+				</div>
 				<form>
-					<div class="grid">
-						<input
-							type="text"
-							name="firstname"
-							placeholder="First name"
-							aria-label="First name"
-							required
-						/>
-						<input
-							type="email"
-							name="email"
-							placeholder="Email address"
-							aria-label="Email address"
-							autocomplete="email"
-							required
-						/>
-						<button type="submit">Subscribe</button>
+					<div class="flex-row gap-1">
+						<div>
+							<label for="lightdark">Light/Dark Mode:</label>
+							<select id="lightdark">
+								<option value="auto">Auto</option>
+								<option value="light">Light</option>
+								<option value="dark">Dark</option>
+							</select>
+						</div>
+						<div>
+							<label for="contrast">Contrast Mode:</label>
+							<select id="contrast">
+								<option value="auto">Auto</option>
+								<option value="high">High</option>
+								<option value="low">Low</option>
+							</select>
+						</div>
 					</div>
 					<fieldset>
 						<label for="terms">
