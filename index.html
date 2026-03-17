@@ -36,6 +36,32 @@
 					filter: revert;
 				}
 			}
+
+			div#color-wheel {
+				border-radius: 100%;
+				border: 2px solid black;
+				width: 400px;
+				height: 400px;
+				background-image: conic-gradient(
+					in oklch increasing hue,
+					oklch(from red l c 0) 0deg,
+					oklch(from red l c 180) 180deg,
+					oklch(from red l c 360) 360deg
+				);
+				position: relative;
+				&::after {
+					content: " ";
+					border-radius: 100%;
+					width: 320px;
+					height: 320px;
+					border: 2px solid black;
+					background: var(--primary-hue);
+					position: absolute;
+					left: 38px;
+					top: 38px;
+					z-index: 2;
+				}
+			}
 		</style>
 	</head>
 
@@ -82,8 +108,11 @@
 					idea is this helps make MN.css more useful as html gets composed into
 					components. because what you don't want as a solid CSS foundation is
 					something that makes using plain HTML feel tedious, and having to go
-					about removing or overriding margins and paddings everytime you want
-					to use plain HTML elements fights against that.
+					about removing or overriding margins and paddings every time you want
+					to use plain HTML elements fights against that, yet this is often the
+					reality when using many classless systems because in order for them to
+					look nice out of the box they come with their own layout opinions
+					baked in.
 				</p>
 
 				<div class="flex-row gap-2">
@@ -125,13 +154,7 @@
 							</select>
 						</div>
 					</div>
-					<fieldset>
-						<label for="terms">
-							<input type="checkbox" role="switch" id="terms" name="terms" />
-							I agree to the
-							<a href="#" onclick="event.preventDefault()">Privacy Policy</a>
-						</label>
-					</fieldset>
+					<div id="color-wheel"></div>
 				</form>
 			</section>
 			<!-- ./ Preview -->

@@ -39,12 +39,19 @@
 			oklch(0.7809 0.1136 218.13),
 			oklch(0.3007 0.0974 254.53)
 		);
-		--secondary: oklch(from var(--primary-hue) l c 120);
-		--tertiary: oklch(from var(--primary-hue) l c 300);
+		--secondary: oklch(from var(--primary-hue) l c 120deg);
+		--tertiary: oklch(from var(--primary-hue) l c -90deg);
 		--light: hsl(270, 100%, 99%);
 		--accent: hsl(278, 100%, 92%);
 		--accent--alt: hsl(279, 100%, 97%);
 		--accent--ui: hsl(284, 55%, 66%);
+
+		:root {
+			--color-1: oklch(42.1% 0.142 228.3);
+			--color-2: oklch(42.1% 0.142 258.3);
+			--color-3: oklch(42.1% 0.142 288.3);
+			--color-4: oklch(42.1% 0.142 318.3);
+		}
 
 		/* light/dark colors */
 		--mn-tx-1: light-dark(#171717, #ededed); /* primary text */
