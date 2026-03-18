@@ -41,24 +41,26 @@
 		);
 		--secondary: oklch(from var(--primary-hue) l c 120deg);
 		--tertiary: oklch(from var(--primary-hue) l c -90deg);
-		--light: hsl(270, 100%, 99%);
-		--accent: hsl(278, 100%, 92%);
-		--accent--alt: hsl(279, 100%, 97%);
-		--accent--ui: hsl(284, 55%, 66%);
 
-		:root {
-			--color-1: oklch(42.1% 0.142 228.3);
-			--color-2: oklch(42.1% 0.142 258.3);
-			--color-3: oklch(42.1% 0.142 288.3);
-			--color-4: oklch(42.1% 0.142 318.3);
-		}
+		--color-1: oklch(42.1% 0.142 228.3);
+		--color-2: oklch(42.1% 0.142 258.3);
+		--color-3: oklch(42.1% 0.142 288.3);
+		--color-4: oklch(42.1% 0.142 318.3);
 
 		/* light/dark colors */
-		--mn-tx-1: light-dark(#171717, #ededed); /* primary text */
-		--mn-tx-2: light-dark(#666, #a1a1a1); /* secondary text */
-		--mn-bg-1: light-dark(#52c9e8, #002d5d); /* primary background */
+		--mn-tx-1: contrast-color(var(--primary-hue)); /* primary text */
+		--mn-tx-2: color-mix(
+			in oklch,
+			var(--primary-hue) 10%,
+			contrast-color(var(--primary-hue))
+		); /* secondary text */
+		--mn-bg-1: var(--primary-hue); /* primary background */
 		--mn-bg-2: light-dark(#fafafa, #000); /* secondary background */
-		--mn-bg-3: light-dark(#ebebeb, #2e2e2e); /* border */
+		--mn-bg-3: color-mix(
+			in oklch,
+			var(--primary-hue) 10%,
+			contrast-color(var(--primary-hue))
+		); /* border */
 		--mn-lk-1: light-dark(#005ff2, #47a8ff); /* link text */
 		--mn-lkb-1: light-dark(#006bff, #006efe); /* link button */
 		--mn-lkb-2: light-dark(#0059ec, #005be7); /* link button hover */
@@ -348,7 +350,12 @@ input[type="button"] {
 	text-decoration: none;
 	white-space: nowrap;
 	background: var(--mn-lkb-1);
-	color: var(--mn-lkb-tx);
+	/*color: var(--mn-lkb-tx);*/
+	color: color-mix(
+		in oklch,
+		var(--primary-hue) 10%,
+		contrast-color(var(--primary-hue))
+	);
 	border: 0;
 	border-radius: 0.375rem;
 	box-sizing: border-box;
