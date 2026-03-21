@@ -53,7 +53,7 @@
 		--mn-bg-2: light-dark(#fafafa, #000); /* secondary background */
 		--mn-bg-3: color-mix(
 			in oklch,
-			var(--primary-hue) 10%,
+			var(--primary-hue) 90%,
 			contrast-color(var(--primary-hue))
 		); /* border */
 		--mn-lk-1: color-mix(
@@ -467,17 +467,17 @@ table {
 
 td,
 th {
-	border: 1px solid var(--mn-bg-3);
+	border: 1px solid var(--mn-bg-2);
 	text-align: left;
 	padding: 0.5rem;
 }
 
 th {
-	background: var(--mn-bg-2);
+	background: var(--mn-bg-3);
 }
 
 tr:nth-child(even) {
-	background: var(--mn-bg-2);
+	background: var(--mn-bg-3);
 }
 
 table caption {
