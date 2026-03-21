@@ -111,43 +111,6 @@ p {
 	text-wrap: pretty;
 }
 
-/* 4. margins for most elements */
-address,
-area,
-article,
-audio,
-blockquote,
-datalist,
-details,
-dl,
-fieldset,
-figure,
-footer,
-form,
-header,
-hr,
-input,
-iframe,
-img,
-main,
-meter,
-nav,
-ol,
-optgroup,
-option,
-output,
-p,
-pre,
-progress,
-ruby,
-section,
-table,
-textarea,
-ul,
-video {
-	margin-bottom: 1rem;
-}
-
 /* 5. typography */
 body {
 	font-family: var(--mn-font);
