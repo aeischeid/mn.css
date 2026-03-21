@@ -18,6 +18,19 @@
 			"recommended": true
 		}
 	},
+	"css": {
+		"linter": {
+			"rules": {
+				"correctness": {
+					"noUnknownFunction": {
+						"options": {
+							"ignore": ["contrast-color"]
+						}
+					}
+				}
+			}
+		}
+	},
 	"javascript": {
 		"formatter": {
 			"quoteStyle": "double"
