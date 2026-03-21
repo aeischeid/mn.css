@@ -42,11 +42,6 @@
 		--secondary: oklch(from var(--primary-hue) l c 120deg);
 		--tertiary: oklch(from var(--primary-hue) l c -90deg);
 
-		--color-1: oklch(42.1% 0.142 228.3);
-		--color-2: oklch(42.1% 0.142 258.3);
-		--color-3: oklch(42.1% 0.142 288.3);
-		--color-4: oklch(42.1% 0.142 318.3);
-
 		/* light/dark colors */
 		--mn-tx-1: contrast-color(var(--primary-hue)); /* primary text */
 		--mn-tx-2: color-mix(
@@ -61,12 +56,28 @@
 			var(--primary-hue) 10%,
 			contrast-color(var(--primary-hue))
 		); /* border */
-		--mn-lk-1: light-dark(#005ff2, #47a8ff); /* link text */
-		--mn-lkb-1: light-dark(#006bff, #006efe); /* link button */
-		--mn-lkb-2: light-dark(#0059ec, #005be7); /* link button hover */
-		--mn-lkb-tx: light-dark(#fff, #fff); /* text over link button */
-		--mn-ac-1: light-dark(#a000f8, #9440d5); /* accent color */
-		--mn-ac-tx: light-dark(#fff, #fff); /* text over accent color */
+		--mn-lk-1: color-mix(
+			in oklch,
+			var(--secondary) 55%,
+			contrast-color(var(--secondary))
+		); /* link text */
+		--mn-lkb-1: color-mix(
+			in oklch,
+			var(--secondary) 80%,
+			contrast-color(var(--secondary))
+		); /* link button */
+		--mn-lkb-2: color-mix(
+			in oklch,
+			var(--secondary) 65%,
+			contrast-color(var(--secondary))
+		); /* link button hover */
+		--mn-lkb-tx: contrast-color(var(--mn-lkb-1)); /* text over link button */
+		--mn-ac-1: color-mix(
+			in oklch,
+			var(--tertiary) 80%,
+			contrast-color(var(--tertiary))
+		); /* accent color */
+		--mn-ac-tx: contrast-color(var(--mn-ac-1)); /* text over accent color */
 
 		--mn-spacing: 0.5rem;
 		--mn-radius: 0.5rem;
