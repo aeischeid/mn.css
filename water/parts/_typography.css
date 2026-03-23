@@ -1,6 +1,6 @@
 h1 {
-  font-size: 2.2em;
-  margin-top: 0;
+	font-size: 2.2em;
+	margin-top: 0;
 }
 
 h1,
@@ -9,8 +9,8 @@ h3,
 h4,
 h5,
 h6 {
-  margin-bottom: 12px;
-  margin-top: 24px;
+	margin-bottom: 12px;
+	margin-top: 24px;
 }
 
 h1,
@@ -20,7 +20,7 @@ h4,
 h5,
 h6,
 strong {
-  color: var(--text-bright);
+	color: var(--text-bright);
 }
 
 h1,
@@ -32,58 +32,58 @@ h6,
 b,
 strong,
 th {
-  font-weight: 600;
+	font-weight: 600;
 }
 
 q::before {
-  content: none;
+	content: none;
 }
 
 q::after {
-  content: none;
+	content: none;
 }
 
 blockquote,
 q {
-  border-left: 4px solid var(--focus);
-  margin: 1.5em 0;
-  padding: 0.5em 1em;
-  font-style: italic;
+	border-left: 4px solid var(--focus);
+	margin: 1.5em 0;
+	padding: 0.5em 1em;
+	font-style: italic;
 }
 
 blockquote > footer {
-  font-style: normal;
-  border: 0;
+	font-style: normal;
+	border: 0;
 }
 
 blockquote cite {
-  font-style: normal;
+	font-style: normal;
 }
 
 address {
-  font-style: normal;
+	font-style: normal;
 }
 
-a[href^='mailto\:']::before {
-  content: '📧 ';
+a[href^="mailto\:"]::before {
+	content: "📧 ";
 }
 
-a[href^='tel\:']::before {
-  content: '📞 ';
+a[href^="tel\:"]::before {
+	content: "📞 ";
 }
 
-a[href^='sms\:']::before {
-  content: '💬 ';
+a[href^="sms\:"]::before {
+	content: "💬 ";
 }
 
 mark {
-  background-color: var(--highlight);
-  border-radius: 2px;
-  padding: 0 2px 0 2px;
-  color: #000;
+	background-color: var(--highlight);
+	border-radius: 2px;
+	padding: 0 2px 0 2px;
+	color: #000;
 }
 
 a > code,
 a > strong {
-  color: inherit;
+	color: inherit;
 }
