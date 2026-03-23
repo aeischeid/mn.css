@@ -320,11 +320,12 @@ blockquote > *:last-child {
 /* 8. buttons and inputs */
 a button,
 button,
-.button input[type="submit"],
+.button,
+input[type="submit"],
 input[type="reset"],
 input[type="button"] {
 	display: inline-block;
-	padding: 0.25rem 0.75rem;
+	padding: 0.4rem 0.8rem;
 	text-align: center;
 	text-decoration: none;
 	white-space: nowrap;
@@ -345,91 +346,48 @@ input[type="button"] {
 	}
 
 	&.secondary {
-		background: color-mix(
-			in oklch,
-			var(--secondary) 80%,
-			contrast-color(var(--secondary))
-		);
-		color: contrast-color(
-			color-mix(
-				in oklch,
-				var(--secondary) 80%,
-				contrast-color(var(--secondary))
-			)
-		);
-
-		&:focus,
-		&:hover {
-			background: color-mix(
-				in oklch,
-				var(--secondary) 65%,
-				contrast-color(var(--secondary))
-			);
-		}
+		--btn-tone: var(--secondary);
 	}
-
 	&.contrast {
-		background: var(--mn-tx-1);
-		color: var(--mn-bg-1);
-
-		&:focus,
-		&:enabled:hover {
-			background: var(--mn-tx-2);
-		}
+		--btn-tone: var(--mn-tx-1);
+		text-shadow: 1px 1px contrast-color(--mn-bg-1);
+	}
+	&.info {
+		--btn-tone: var(--mn-info);
+	}
+	&.success {
+		--btn-tone: var(--mn-success);
+	}
+	&.warning {
+		--btn-tone: var(--mn-warning);
+	}
+	&.error {
+		--btn-tone: var(--mn-error);
 	}
 
-	&.success {
-		background: var(--mn-success);
-		color: contrast-color(var(--mn-success));
+	&:where(.secondary, .contrast, .info, .success, .warning, .error) {
+		background: var(--btn-tone);
+		color: contrast-color(var(--btn-tone));
+
 		&:hover,
 		&:focus {
 			background: color-mix(
 				in oklch,
-				var(--mn-success) 75%,
-				contrast-color(var(--mn-success))
+				var(--btn-tone) 75%,
+				contrast-color(var(--btn-tone))
 			);
 		}
 	}
 
-	&.info {
-		background: var(--mn-info);
-		color: contrast-color(var(--mn-info));
+	&.outline {
+		background: transparent;
+		border: 1px solid currentColor;
+		color: var(--btn-tone, var(--mn-lkb-1));
 
-		&:focus,
-		&:enabled:hover {
-			background: color-mix(
-				in oklch,
-				var(--mn-info) 75%,
-				contrast-color(var(--mn-info))
-			);
-		}
-	}
-
-	&.warning {
-		background: var(--mn-warning);
-		color: contrast-color(var(--mn-warning));
-
-		&:focus,
-		&:enabled:hover {
-			background: color-mix(
-				in oklch,
-				var(--mn-warning) 75%,
-				contrast-color(var(--mn-warning))
-			);
-		}
-	}
-
-	&.error {
-		background: var(--mn-error);
-		color: contrast-color(var(--mn-error));
-
-		&:focus,
-		&:enabled:hover {
-			background: color-mix(
-				in oklch,
-				var(--mn-error) 75%,
-				contrast-color(var(--mn-error))
-			);
+		&:hover,
+		&:focus {
+			background: color-mix(in oklch, currentColor 12%, transparent);
+			box-shadow: inset 0px 0px 4px var(--btn-tone);
 		}
 	}
 }
@@ -441,124 +399,6 @@ input[type="reset"][disabled],
 input[type="button"][disabled] {
 	cursor: not-allowed;
 	opacity: 0.5;
-}
-
-.button.outline,
-button.outline,
-input[type="submit"].outline,
-input[type="reset"].outline,
-input[type="button"].outline {
-	background: transparent;
-	border: 1px solid currentColor;
-	color: var(--mn-lkb-1);
-
-	&:focus,
-	&:enabled:hover {
-		background: color-mix(in oklch, currentColor 12%, transparent);
-		color: var(--mn-lkb-2);
-	}
-}
-
-.button.secondary.outline,
-button.secondary.outline,
-input[type="submit"].secondary.outline,
-input[type="reset"].secondary.outline,
-input[type="button"].secondary.outline {
-	color: color-mix(
-		in oklch,
-		var(--secondary) 80%,
-		contrast-color(var(--secondary))
-	);
-
-	&:focus,
-	&:enabled:hover {
-		color: color-mix(
-			in oklch,
-			var(--secondary) 65%,
-			contrast-color(var(--secondary))
-		);
-	}
-}
-
-.button.contrast.outline,
-button.contrast.outline,
-input[type="submit"].contrast.outline,
-input[type="reset"].contrast.outline,
-input[type="button"].contrast.outline {
-	color: var(--mn-tx-1);
-
-	&:focus,
-	&:enabled:hover {
-		color: var(--mn-tx-2);
-	}
-}
-
-.button.info.outline,
-button.info.outline,
-input[type="submit"].info.outline,
-input[type="reset"].info.outline,
-input[type="button"].info.outline {
-	color: var(--mn-info);
-
-	&:focus,
-	&:enabled:hover {
-		color: color-mix(
-			in oklch,
-			var(--mn-info) 75%,
-			contrast-color(var(--mn-info))
-		);
-	}
-}
-
-.button.success.outline,
-button.success.outline,
-input[type="submit"].success.outline,
-input[type="reset"].success.outline,
-input[type="button"].success.outline {
-	color: var(--mn-success);
-
-	&:focus,
-	&:enabled:hover {
-		color: color-mix(
-			in oklch,
-			var(--mn-success) 75%,
-			contrast-color(var(--mn-success))
-		);
-	}
-}
-
-.button.warning.outline,
-button.warning.outline,
-input[type="submit"].warning.outline,
-input[type="reset"].warning.outline,
-input[type="button"].warning.outline {
-	color: var(--mn-warning);
-
-	&:focus,
-	&:enabled:hover {
-		color: color-mix(
-			in oklch,
-			var(--mn-warning) 75%,
-			contrast-color(var(--mn-warning))
-		);
-	}
-}
-
-.button.error.outline,
-button.error.outline,
-input[type="submit"].error.outline,
-input[type="reset"].error.outline,
-input[type="button"].error.outline {
-	color: var(--mn-error);
-
-	&:focus,
-	&:enabled:hover {
-		color: color-mix(
-			in oklch,
-			var(--mn-error) 75%,
-			contrast-color(var(--mn-error))
-		);
-	}
 }
 
 textarea,
