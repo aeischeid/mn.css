@@ -79,6 +79,11 @@
 		); /* accent color */
 		--mn-ac-tx: contrast-color(var(--mn-ac-1)); /* text over accent color */
 
+		--mn-info: oklch(0.72 0.13 240);
+		--mn-success: oklch(0.76 0.16 145);
+		--mn-warning: oklch(0.84 0.17 85);
+		--mn-error: oklch(0.62 0.21 25);
+
 		--mn-spacing: 0.5rem;
 		--mn-radius: 0.5rem;
 	}
@@ -315,7 +320,7 @@ blockquote > *:last-child {
 /* 8. buttons and inputs */
 a button,
 button,
-input[type="submit"],
+.button input[type="submit"],
 input[type="reset"],
 input[type="button"] {
 	display: inline-block;
@@ -334,6 +339,20 @@ input[type="button"] {
 	border-radius: 0.375rem;
 	box-sizing: border-box;
 	cursor: pointer;
+
+	&.success {
+		background: var(--mn-success);
+		color: contrast-color(var(--mn-success));
+
+		&:hover,
+		&:focus {
+			background: color-mix(
+				in oklch,
+				var(--mn-success) 75%,
+				contrast-color(var(--mn-success))
+			);
+		}
+	}
 }
 
 a button[disabled],
@@ -356,6 +375,284 @@ input[type="reset"]:enabled:hover,
 input[type="button"]:focus,
 input[type="button"]:enabled:hover {
 	background: var(--mn-lkb-2);
+}
+
+.button.secondary,
+button.secondary,
+input[type="submit"].secondary,
+input[type="reset"].secondary,
+input[type="button"].secondary {
+	background: color-mix(
+		in oklch,
+		var(--secondary) 80%,
+		contrast-color(var(--secondary))
+	);
+	color: contrast-color(
+		color-mix(in oklch, var(--secondary) 80%, contrast-color(var(--secondary)))
+	);
+}
+
+.button.secondary:focus,
+.button.secondary:enabled:hover,
+button.secondary:focus,
+button.secondary:enabled:hover,
+input[type="submit"].secondary:focus,
+input[type="submit"].secondary:enabled:hover,
+input[type="reset"].secondary:focus,
+input[type="reset"].secondary:enabled:hover,
+input[type="button"].secondary:focus,
+input[type="button"].secondary:enabled:hover {
+	background: color-mix(
+		in oklch,
+		var(--secondary) 65%,
+		contrast-color(var(--secondary))
+	);
+}
+
+.button.contrast,
+button.contrast,
+input[type="submit"].contrast,
+input[type="reset"].contrast,
+input[type="button"].contrast {
+	background: var(--mn-tx-1);
+	color: var(--mn-bg-1);
+}
+
+.button.contrast:focus,
+.button.contrast:enabled:hover,
+button.contrast:focus,
+button.contrast:enabled:hover,
+input[type="submit"].contrast:focus,
+input[type="submit"].contrast:enabled:hover,
+input[type="reset"].contrast:focus,
+input[type="reset"].contrast:enabled:hover,
+input[type="button"].contrast:focus,
+input[type="button"].contrast:enabled:hover {
+	background: var(--mn-tx-2);
+}
+
+.button.info,
+button.info,
+input[type="submit"].info,
+input[type="reset"].info,
+input[type="button"].info {
+	background: var(--mn-info);
+	color: contrast-color(var(--mn-info));
+}
+
+.button.info:focus,
+.button.info:enabled:hover,
+button.info:focus,
+button.info:enabled:hover,
+input[type="submit"].info:focus,
+input[type="submit"].info:enabled:hover,
+input[type="reset"].info:focus,
+input[type="reset"].info:enabled:hover,
+input[type="button"].info:focus,
+input[type="button"].info:enabled:hover {
+	background: var(--mn-info-hover);
+}
+
+.button.warning,
+button.warning,
+input[type="submit"].warning,
+input[type="reset"].warning,
+input[type="button"].warning {
+	background: var(--mn-warning);
+	color: contrast-color(var(--mn-warning));
+}
+
+.button.warning:focus,
+.button.warning:enabled:hover,
+button.warning:focus,
+button.warning:enabled:hover,
+input[type="submit"].warning:focus,
+input[type="submit"].warning:enabled:hover,
+input[type="reset"].warning:focus,
+input[type="reset"].warning:enabled:hover,
+input[type="button"].warning:focus,
+input[type="button"].warning:enabled:hover {
+	background: var(--mn-warning-hover);
+}
+
+.button.error,
+button.error,
+input[type="submit"].error,
+input[type="reset"].error,
+input[type="button"].error {
+	background: var(--mn-error);
+	color: contrast-color(var(--mn-error));
+}
+
+.button.error:focus,
+.button.error:enabled:hover,
+button.error:focus,
+button.error:enabled:hover,
+input[type="submit"].error:focus,
+input[type="submit"].error:enabled:hover,
+input[type="reset"].error:focus,
+input[type="reset"].error:enabled:hover,
+input[type="button"].error:focus,
+input[type="button"].error:enabled:hover {
+	background: var(--mn-error-hover);
+}
+
+.button.outline,
+button.outline,
+input[type="submit"].outline,
+input[type="reset"].outline,
+input[type="button"].outline {
+	background: transparent;
+	border: 1px solid currentColor;
+	color: var(--mn-lkb-1);
+}
+
+.button.outline:focus,
+.button.outline:enabled:hover,
+button.outline:focus,
+button.outline:enabled:hover,
+input[type="submit"].outline:focus,
+input[type="submit"].outline:enabled:hover,
+input[type="reset"].outline:focus,
+input[type="reset"].outline:enabled:hover,
+input[type="button"].outline:focus,
+input[type="button"].outline:enabled:hover {
+	background: color-mix(in oklch, currentColor 12%, transparent);
+	color: var(--mn-lkb-2);
+}
+
+.button.secondary.outline,
+button.secondary.outline,
+input[type="submit"].secondary.outline,
+input[type="reset"].secondary.outline,
+input[type="button"].secondary.outline {
+	color: color-mix(
+		in oklch,
+		var(--secondary) 80%,
+		contrast-color(var(--secondary))
+	);
+}
+
+.button.secondary.outline:focus,
+.button.secondary.outline:enabled:hover,
+button.secondary.outline:focus,
+button.secondary.outline:enabled:hover,
+input[type="submit"].secondary.outline:focus,
+input[type="submit"].secondary.outline:enabled:hover,
+input[type="reset"].secondary.outline:focus,
+input[type="reset"].secondary.outline:enabled:hover,
+input[type="button"].secondary.outline:focus,
+input[type="button"].secondary.outline:enabled:hover {
+	color: color-mix(
+		in oklch,
+		var(--secondary) 65%,
+		contrast-color(var(--secondary))
+	);
+}
+
+.button.contrast.outline,
+button.contrast.outline,
+input[type="submit"].contrast.outline,
+input[type="reset"].contrast.outline,
+input[type="button"].contrast.outline {
+	color: var(--mn-tx-1);
+}
+
+.button.contrast.outline:focus,
+.button.contrast.outline:enabled:hover,
+button.contrast.outline:focus,
+button.contrast.outline:enabled:hover,
+input[type="submit"].contrast.outline:focus,
+input[type="submit"].contrast.outline:enabled:hover,
+input[type="reset"].contrast.outline:focus,
+input[type="reset"].contrast.outline:enabled:hover,
+input[type="button"].contrast.outline:focus,
+input[type="button"].contrast.outline:enabled:hover {
+	color: var(--mn-tx-2);
+}
+
+.button.info.outline,
+button.info.outline,
+input[type="submit"].info.outline,
+input[type="reset"].info.outline,
+input[type="button"].info.outline {
+	color: var(--mn-info);
+}
+
+.button.info.outline:focus,
+.button.info.outline:enabled:hover,
+button.info.outline:focus,
+button.info.outline:enabled:hover,
+input[type="submit"].info.outline:focus,
+input[type="submit"].info.outline:enabled:hover,
+input[type="reset"].info.outline:focus,
+input[type="reset"].info.outline:enabled:hover,
+input[type="button"].info.outline:focus,
+input[type="button"].info.outline:enabled:hover {
+	color: var(--mn-info-hover);
+}
+
+.button.success.outline,
+button.success.outline,
+input[type="submit"].success.outline,
+input[type="reset"].success.outline,
+input[type="button"].success.outline {
+	color: var(--mn-success);
+}
+
+.button.success.outline:focus,
+.button.success.outline:enabled:hover,
+button.success.outline:focus,
+button.success.outline:enabled:hover,
+input[type="submit"].success.outline:focus,
+input[type="submit"].success.outline:enabled:hover,
+input[type="reset"].success.outline:focus,
+input[type="reset"].success.outline:enabled:hover,
+input[type="button"].success.outline:focus,
+input[type="button"].success.outline:enabled:hover {
+	color: var(--mn-success-hover);
+}
+
+.button.warning.outline,
+button.warning.outline,
+input[type="submit"].warning.outline,
+input[type="reset"].warning.outline,
+input[type="button"].warning.outline {
+	color: var(--mn-warning);
+}
+
+.button.warning.outline:focus,
+.button.warning.outline:enabled:hover,
+button.warning.outline:focus,
+button.warning.outline:enabled:hover,
+input[type="submit"].warning.outline:focus,
+input[type="submit"].warning.outline:enabled:hover,
+input[type="reset"].warning.outline:focus,
+input[type="reset"].warning.outline:enabled:hover,
+input[type="button"].warning.outline:focus,
+input[type="button"].warning.outline:enabled:hover {
+	color: var(--mn-warning-hover);
+}
+
+.button.error.outline,
+button.error.outline,
+input[type="submit"].error.outline,
+input[type="reset"].error.outline,
+input[type="button"].error.outline {
+	color: var(--mn-error);
+}
+
+.button.error.outline:focus,
+.button.error.outline:enabled:hover,
+button.error.outline:focus,
+button.error.outline:enabled:hover,
+input[type="submit"].error.outline:focus,
+input[type="submit"].error.outline:enabled:hover,
+input[type="reset"].error.outline:focus,
+input[type="reset"].error.outline:enabled:hover,
+input[type="button"].error.outline:focus,
+input[type="button"].error.outline:enabled:hover {
+	color: var(--mn-error-hover);
 }
 
 textarea,
