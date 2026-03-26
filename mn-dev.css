@@ -340,8 +340,14 @@ input[type="button"] {
 	box-sizing: border-box;
 	cursor: pointer;
 
-	&:hover,
-	&:focus {
+	&[disabled],
+	&:disabled {
+		cursor: not-allowed;
+		opacity: 0.5;
+	}
+
+	&:enabled:hover,
+	&:enabled:focus {
 		background: var(--mn-lkb-2);
 	}
 
@@ -369,8 +375,8 @@ input[type="button"] {
 		background: var(--btn-tone);
 		color: contrast-color(var(--btn-tone));
 
-		&:hover,
-		&:focus {
+		&:enabled:hover,
+		&:enabled:focus {
 			background: color-mix(
 				in oklch,
 				var(--btn-tone) 75%,
@@ -390,15 +396,6 @@ input[type="button"] {
 			box-shadow: inset 0px 0px 4px var(--btn-tone);
 		}
 	}
-}
-
-a button[disabled],
-button[disabled],
-input[type="submit"][disabled],
-input[type="reset"][disabled],
-input[type="button"][disabled] {
-	cursor: not-allowed;
-	opacity: 0.5;
 }
 
 textarea,
