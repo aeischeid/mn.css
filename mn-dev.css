@@ -35,26 +35,33 @@
 			"Geist Mono", ui-monospace, "Cascadia Code", "Source Code Pro", Menlo,
 			Consolas, "DejaVu Sans Mono", monospace;
 
-		--primary-hue: light-dark(
+		--primary: light-dark(
 			oklch(0.7809 0.1136 218.13),
 			oklch(0.3007 0.0974 254.53)
 		);
-		--secondary: oklch(from var(--primary-hue) l c 120deg);
-		--tertiary: oklch(from var(--primary-hue) l c -90deg);
+		/*--secondary: oklch(from var(--primary) l c 120deg);
+		--tertiary: oklch(from var(--primary) l c -90deg);*/
+
+		--secondary: oklch(
+			from var(--primary) calc(l + 0.1) calc(c * 0.85) calc(h + 40)
+		);
+		--tertiary: oklch(
+			from var(--primary) calc(l + 0.08) calc(c * 0.75) calc(h - 35)
+		);
 
 		/* light/dark colors */
-		--mn-tx-1: contrast-color(var(--primary-hue)); /* primary text */
+		--mn-tx-1: contrast-color(var(--primary)); /* primary text */
 		--mn-tx-2: color-mix(
 			in oklch,
-			var(--primary-hue) 10%,
-			contrast-color(var(--primary-hue))
+			var(--primary) 10%,
+			contrast-color(var(--primary))
 		); /* secondary text */
-		--mn-bg-1: var(--primary-hue); /* primary background */
+		--mn-bg-1: var(--primary); /* primary background */
 		--mn-bg-2: light-dark(#fafafa, #000); /* secondary background */
 		--mn-bg-3: color-mix(
 			in oklch,
-			var(--primary-hue) 90%,
-			contrast-color(var(--primary-hue))
+			var(--primary) 90%,
+			contrast-color(var(--primary))
 		); /* border */
 		--mn-lk-1: color-mix(
 			in oklch,
@@ -332,16 +339,22 @@ input[type="button"] {
 	background: var(--mn-lkb-1);
 	color: color-mix(
 		in oklch,
-		var(--primary-hue) 10%,
-		contrast-color(var(--primary-hue))
+		var(--primary) 10%,
+		contrast-color(var(--primary))
 	);
 	border: 0;
 	border-radius: 0.375rem;
 	box-sizing: border-box;
 	cursor: pointer;
 
-	&:hover,
-	&:focus {
+	&[disabled],
+	&:disabled {
+		cursor: not-allowed;
+		opacity: 0.5;
+	}
+
+	&:enabled:hover,
+	&:enabled:focus {
 		background: var(--mn-lkb-2);
 	}
 
@@ -369,8 +382,8 @@ input[type="button"] {
 		background: var(--btn-tone);
 		color: contrast-color(var(--btn-tone));
 
-		&:hover,
-		&:focus {
+		&:enabled:hover,
+		&:enabled:focus {
 			background: color-mix(
 				in oklch,
 				var(--btn-tone) 75%,
@@ -390,15 +403,6 @@ input[type="button"] {
 			box-shadow: inset 0px 0px 4px var(--btn-tone);
 		}
 	}
-}
-
-a button[disabled],
-button[disabled],
-input[type="submit"][disabled],
-input[type="reset"][disabled],
-input[type="button"][disabled] {
-	cursor: not-allowed;
-	opacity: 0.5;
 }
 
 textarea,
