@@ -252,15 +252,11 @@ footer nav ul li:not(:first-child)::before {
 	margin: 0 0.25em;
 }
 
-main,
-article {
+.card {
 	padding: 1.5rem;
 	background: var(--mn-bg-1);
 	border: 1px solid var(--mn-bg-3);
 	border-radius: 0.25rem;
-}
-
-main article {
 	background: var(--mn-bg-2);
 	border-radius: 0.375rem;
 }
@@ -268,46 +264,6 @@ main article {
 main > *:last-child,
 article > *:last-child {
 	margin-bottom: 0;
-}
-
-@media only screen and (max-width: 48rem) {
-	main {
-		margin: -1rem;
-		background: none;
-		border: none;
-	}
-
-	header {
-		background-color: var(--mn-bg-1);
-		border-bottom: 1px solid var(--mn-bg-3);
-		margin-bottom: 1rem;
-	}
-
-	footer {
-		margin-top: 1rem;
-		padding-top: 1rem;
-		border-top: 1px solid var(--mn-bg-3);
-	}
-
-	main,
-	article {
-		padding: 1rem;
-	}
-}
-
-@media only screen and (min-width: 82rem) {
-	aside {
-		position: absolute;
-		width: 16rem;
-	}
-
-	aside:nth-child(even) {
-		left: calc(50% - ((48rem) / 2) - (16rem));
-	}
-
-	aside:nth-child(odd) {
-		right: calc(50% - ((48rem) / 2) - (16rem));
-	}
 }
 
 /* 7. blockquotes */

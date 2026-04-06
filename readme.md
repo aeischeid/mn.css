@@ -12,6 +12,7 @@ The inspirations:
 - https://modern-css.com/
 - https://css-tricks.com/is-it-time-to-un-sass/
 - https://una.im/contrast-color
+- https://2026.stateofthebrowser.com/speaker/bramus-van-damme/
 
 The prior art:
 - pico.css https://picocss.com/
@@ -59,10 +60,10 @@ To assist in developing mn.css itself, a config file for [Biome](https://biomejs
 
 ## A note on "AI"
 
-In the era of LLM developer tools many training data sets are built around established or legacy approaches - with a risk of further entrenching them. And some web developers may ask why even bother learning CSS, much less modern CSS, when LLMs will happily pump out the unwieldy strings of class names, and Linters + Tailwind will clean a lot of it up for you after the fact, but before it ships. 
+In the era of LLM developer tools, many training data sets are built around established or legacy approaches - with a risk of further entrenching them. And some web developers may ask why even bother learning CSS, much less modern CSS, when LLMs will happily pump out the unwieldy strings of class names, and Linters + Tailwind will clean a lot of it up for you after the fact, but before it ships. 
 
 Are we solving a non-problem? 
 
 Putting the capabilities or ethics of LLMs mostly aside, I can see the value in the avoidance of tedium or what some might call 'unnecessary complexity'. LLMs do seem to have potential in avoiding unnecessary complexity, and boilerplate, including CSS boilerplate, is often that! Still, there is a major difference between using tech to write gobs of boilerplate for you and building or choosing a better conceptual system which has much less boilerplate. Assuming the later is possible, settling for the former feels shortsighted or foolish in that it ends up being much more fragile in addition to being a death sentence for proper understanding, and proper understanding of our design primitives is crucial for good UX in the long run.
 
-Another benefit generative AI advocates talk about is "lowering the floor" - and fair enough many web developers, and even more people who just want to use the web have little interest in becoming experts in CSS. But LLMs are hardly the only way to reduce the barriers to entry. Better, simpler, more approachable libraries do this too! Whats more, they can do it without relying on third party pay-to-play services, crazy energy use, or unethical model and training. Additionally better libraries that can accomplish this without requiring deep knowledge, but still promoting or enabling such understanding rather than obscuring or discouraging it. Better libraries fully embracing modern approaches therefor are a Win-Win-Win type of scenario worth pursuing.
+Another benefit generative AI advocates talk about is "lowering the floor", and fair enough, many web developers, and even more-so people who just want to use the web, have little to no interest in becoming experts in CSS. But LLMs are hardly the only way to reduce the barriers to entry. Better, simpler, more approachable libraries do this too! Whats more, they can do it without relying on third party pay-to-play services, crazy energy use, or unethical model and training. Additionally better libraries that can accomplish this without requiring deep knowledge, but still promoting or enabling such understanding rather than obscuring or discouraging it. Better libraries fully embracing modern approaches therefor are a Win-Win-Win type of scenario worth pursuing.
