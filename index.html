@@ -589,14 +589,16 @@
 			<!-- Cards-->
 			<div class="flex-row gap-2 my-4">
 				<article class="card flex-1">
-					<h2>Article</h2>
-					<p>
-						Nullam dui arcu, malesuada et sodales eu, efficitur vitae dolor. Sed
-						ultricies dolor non ante vulputate hendrerit. Vivamus sit amet
-						suscipit sapien. Nulla iaculis eros a elit pharetra egestas. Nunc
-						placerat facilisis cursus. Sed vestibulum metus eget dolor pharetra
-						rutrum.
-					</p>
+					<div>
+						<h2>Article</h2>
+						<p>
+							Nullam dui arcu, malesuada et sodales eu, efficitur vitae dolor.
+							Sed ultricies dolor non ante vulputate hendrerit. Vivamus sit amet
+							suscipit sapien. Nulla iaculis eros a elit pharetra egestas. Nunc
+							placerat facilisis cursus. Sed vestibulum metus eget dolor
+							pharetra rutrum.
+						</p>
+					</div>
 					<footer>
 						<small
 							>Duis nec elit placerat, suscipit nibh quis, finibus neque.</small
@@ -604,7 +606,17 @@
 					</footer>
 				</article>
 				<div class="card flex-1">
-					<header>Card Title</header>
+					<header class="flex-row space-between">
+						<h2>Card Title</h2>
+						<!--<nav>
+							<ul>
+								<li>One</li>
+								<li>Two</li>
+								<li>Three</li>
+							</ul>
+						</nav>-->
+						<i>i</i>
+					</header>
 					<div>
 						<h4>Card body</h4>
 						<p>Some content to fill the card</p>
@@ -613,9 +625,11 @@
 				</div>
 
 				<div class="card flex-1">
-					<h4>Card body</h4>
-					<p>just content to fill the card</p>
-					<button>Click Me!</button>
+					<div>
+						<h4>Card body</h4>
+						<p>just content to fill the card</p>
+						<button>Click Me!</button>
+					</div>
 				</div>
 			</div>
 			<!-- ./ Cards-->
