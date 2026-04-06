@@ -103,16 +103,46 @@
 					HTML might not look the best out of the box. Whereas many classless
 					libs often say they are great for simple blog or such, just drop in
 					the stylesheet and presto! in mn.css a .blog-post class to control
-					layout may very much be something you still want to do. Vertical
-					spacing and rhythm are meant to be more controlled than implied. The
-					idea is this helps make MN.css more useful as html gets composed into
-					components. because what you don't want as a solid CSS foundation is
-					something that makes using plain HTML feel tedious, and having to go
-					about removing or overriding margins and paddings every time you want
-					to use plain HTML elements fights against that, yet this is often the
-					reality when using many classless systems because in order for them to
-					look nice out of the box they come with their own layout opinions
-					baked in.
+					page level layout may very much be something you still want to do.
+					This project in opinionated in some ways, but in terms of how to style
+					the `main` or `nav` elements it is not. Vertical spacing and rhythm
+					are meant to be more controlled than implied. The idea is this helps
+					make MN.css more useful as HTML gets composed into components.
+				</p>
+				<p>
+					Another way to say it; What you don't want as a solid CSS foundation
+					is something that makes using plain HTML feel tedious, and having to
+					go about removing or overriding margins and paddings every time you
+					want to use plain HTML elements fights against that. A similar example
+					- overloading the article element as a "card" is a approach many
+					classless libraries take, but not mn.css. with our approach you have
+					to make the conscious decision to add a `.card` class to your element,
+					but with that you gain more flexibility and control.
+				</p>
+				<p>
+					Another aspect is documentation. Classless library often contain very
+					little. Granted little is needed. but the structure of it can often
+					make it a poor foundation to build from. and if you build from it
+					documentation then becomes something you have to solve for on your
+					own.
+				</p>
+				<p>
+					Using native CSS nesting and MN.css aims for the source code to be be
+					self documenting. For example. In
+					https://www.unaui.com/components/card a distinct documentation source
+					is needed to layout how to use a card component. But taking a look at
+					mn.css source we can see pretty plainly that how .title and .footer
+					are the nested bits of a .card. It would be a challenge to have
+					documentation be much clearer than that, and it completely avoids the
+					"documentation is just lies waiting to happen" problem. Proximity is
+					another win, but the big one is that if your source code is self
+					documenting it can't be out of sync. If you more dramatically
+					customize from the root mn.css you also won't be competing with other
+					sources of documentation - another thing that often disincentivizes
+					styling customization, but in the era of advanced dev tools can be
+					advantageous. Do you need an AI skill or MCP if your own css files are
+					sufficient context. Heck, maybe you don't even need a LLM to suggest
+					class names if a more deterministic tool can leverage your plain CSS.
 				</p>
 
 				<div class="flex-row gap-2">
@@ -556,23 +586,39 @@
 			</section>
 			<!-- ./ Accordions -->
 
-			<!-- Article-->
-			<article id="article">
-				<h2>Article</h2>
-				<p>
-					Nullam dui arcu, malesuada et sodales eu, efficitur vitae dolor. Sed
-					ultricies dolor non ante vulputate hendrerit. Vivamus sit amet
-					suscipit sapien. Nulla iaculis eros a elit pharetra egestas. Nunc
-					placerat facilisis cursus. Sed vestibulum metus eget dolor pharetra
-					rutrum.
-				</p>
-				<footer>
-					<small
-						>Duis nec elit placerat, suscipit nibh quis, finibus neque.</small
-					>
-				</footer>
-			</article>
-			<!-- ./ Article-->
+			<!-- Cards-->
+			<div class="flex-row gap-2 my-4">
+				<article class="card flex-1">
+					<h2>Article</h2>
+					<p>
+						Nullam dui arcu, malesuada et sodales eu, efficitur vitae dolor. Sed
+						ultricies dolor non ante vulputate hendrerit. Vivamus sit amet
+						suscipit sapien. Nulla iaculis eros a elit pharetra egestas. Nunc
+						placerat facilisis cursus. Sed vestibulum metus eget dolor pharetra
+						rutrum.
+					</p>
+					<footer>
+						<small
+							>Duis nec elit placerat, suscipit nibh quis, finibus neque.</small
+						>
+					</footer>
+				</article>
+				<div class="card flex-1">
+					<header>Card Title</header>
+					<div>
+						<h4>Card body</h4>
+						<p>Some content to fill the card</p>
+					</div>
+					<footer>Card footer</footer>
+				</div>
+
+				<div class="card flex-1">
+					<h4>Card body</h4>
+					<p>just content to fill the card</p>
+					<button>Click Me!</button>
+				</div>
+			</div>
+			<!-- ./ Cards-->
 
 			<!-- Group -->
 			<section id="group">
