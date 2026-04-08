@@ -119,10 +119,10 @@ h6 {
 	overflow-wrap: break-word;
 	color: var(--mn-tx-1);
 	line-height: 1;
-	padding: 0.5rem 0 0.25rem 0;
-	margin-bottom: 0.5rem;
+	padding: 0.2rem 0;
+	margin: 0.5rem 0;
 
-	.bb-1 {
+	.bb {
 		border-bottom: 1px solid var(--mn-bg-3);
 	}
 }
@@ -189,16 +189,16 @@ body {
 
 	> header {
 		border-bottom: 1px solid var(--mn-bg-3);
-		padding: 1.5rem;
+		padding: 1rem 1.5rem;
 	}
 
 	> div {
-		padding: 1.5rem;
+		padding: 1rem 1.5rem;
 	}
 
 	> footer {
 		border-top: 1px solid var(--mn-bg-3);
-		padding: 1.5rem;
+		padding: 1rem 1.5rem;
 	}
 }
 

@@ -79,7 +79,7 @@
 						<option value="">none</option>
 						<option value="mn.css">mn.css</option>
 						<option value="mn-dev.css" selected>mn-dev.css</option>
-						<option value="pico-new.css" selected>pico-new.css</option>
+						<option value="pico-new.css">pico-new.css</option>
 						<option value="pico-new-light-dark.css">pico-light-dark</option>
 						<option value="mini-nord.css">mini-css</option>
 						<option value="water/builds/water.css">water.css</option>
@@ -120,29 +120,37 @@
 					but with that you gain more flexibility and control.
 				</p>
 				<p>
-					Another aspect is documentation. Classless library often contain very
-					little. Granted little is needed. but the structure of it can often
-					make it a poor foundation to build from. and if you build from it
-					documentation then becomes something you have to solve for on your
-					own.
+					Then there is documentation. Classless library often contain very
+					little. Granted, little is needed. Apart from the fact that the
+					starting structure of many existing classless css libraries often make
+					them a poor foundation to build from, if you do decide to build off
+					from it, then documentation becomes a extra problem you have to solve
+					for on your own.
 				</p>
 				<p>
-					Using native CSS nesting and MN.css aims for the source code to be be
-					self documenting. For example. In
-					https://www.unaui.com/components/card a distinct documentation source
-					is needed to layout how to use a card component. But taking a look at
-					mn.css source we can see pretty plainly that how .title and .footer
-					are the nested bits of a .card. It would be a challenge to have
-					documentation be much clearer than that, and it completely avoids the
-					"documentation is just lies waiting to happen" problem. Proximity is
-					another win, but the big one is that if your source code is self
-					documenting it can't be out of sync. If you more dramatically
-					customize from the root mn.css you also won't be competing with other
-					sources of documentation - another thing that often disincentivizes
-					styling customization, but in the era of advanced dev tools can be
-					advantageous. Do you need an AI skill or MCP if your own css files are
-					sufficient context. Heck, maybe you don't even need a LLM to suggest
-					class names if a more deterministic tool can leverage your plain CSS.
+					MN.css aims to leverage native CSS nesting for compactness and source
+					code organization, but an extra advantage that comes from this is how
+					self documenting this turns out to be. For example, In
+					<a href="https://www.unaui.com/components/card" target="blank"
+						>UnaUI</a
+					>
+					a distinct documentation source is needed to layout how to use a card
+					component. But taking a look at mn.css source we can see pretty
+					plainly how a card <code>header</code> and <code>footer</code> are the
+					nested bits of a <code>.card</code>. It would be a challenge to have
+					documentation be much clearer or more concise than that, and it
+					completely avoids the "documentation is just lies waiting to happen"
+					problem. Proximity is another win, of course, but the big one is that
+					if your source code is self documenting it can't be out of sync. If
+					you more dramatically customize from the root mn.css you also won't be
+					competing with other sources of documentation - which in practice is
+					yet another thing that often disincentivizes styling customization in
+					other CSS or component libraries. This is especially worth emphasizing
+					in the era of advanced dev tools. Do you need an AI skill or MCP if
+					your own css files, and conventions with those to avoid drift if your
+					raw CSS files are sufficient context. Heck, maybe you don't even need
+					a LLM to suggest class names if a more deterministic tool can leverage
+					your plain CSS.
 				</p>
 
 				<div class="flex-row gap-2">
@@ -304,20 +312,24 @@
 			<!-- Buttons-->
 			<section id="buttons">
 				<h2>Buttons</h2>
-				<p class="grid">
+				<p class="flex-row gap-1">
 					<button>Primary</button>
 					<button class="secondary">Secondary</button>
 					<button class="contrast">Contrast</button>
+				</p>
+				<p class="flex-row gap-1">
 					<button class="error">Error</button>
 					<button class="warning">Warning</button>
 					<button class="success">Success</button>
 					<button class="info">Info</button>
 					<button class="success" disabled>Disabled</button>
 				</p>
-				<p class="grid">
+				<p class="flex-row gap-1">
 					<button class="outline">Primary outline</button>
 					<button class="outline secondary">Secondary outline</button>
 					<button class="outline contrast">Contrast outline</button>
+				</p>
+				<p class="flex-row gap-1">
 					<button class="outline error">Error</button>
 					<button class="outline warning">Warning</button>
 					<button class="outline success">Success</button>
